@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy birthday</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <audio id="myAudio" src="ad.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <style type="text/css">
+      canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+p {
+  margin: 0 0;
+  position: absolute;
+  font: 16px Verdana;
+  color: #eee;
+  height: 25px;
+  top: calc( 100vh - 30px );
+  text-shadow: 0 0 2px white;
+}
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+span {
+  font-size: 11px;
+}
+p > a:first-of-type {
+  font-size: 20px;
+}
+body {
+  overflow: hidden;
+}
+    </style>
+  </body>
+  <script>
+        setTimeout(function() {
+            window.location.href = "tree.html";
+        }, 12050); // 12000 milliseconds = 12 seconds
+    
+
+window.onload = function() {
+    var audio = document.getElementById('myAudio');
+    
+    // Set the current time to 3 seconds
+    audio.currentTime = 3;
+
+    // Play the audio
+    audio.play();
+
+    // Stop the audio at 15 seconds
+    audio.ontimeupdate = function() {
+        if (audio.currentTime >= 15) {
+            audio.pause(); // Pause the audio at 15 seconds
+        }
+    };
+};
+
+
+    </script>
+</html>
